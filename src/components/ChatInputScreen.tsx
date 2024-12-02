@@ -7,7 +7,6 @@ const ChatInputScreen: React.FC = () => {
   const [messages, setMessages] = useState<{ sender: string, text: string }[]>([])
 
   const handleSendMessage = async (message: string) => {
-    // add user message to the list
     setMessages([...messages, { sender: 'user', text: message }])
 
     const aiResponse = await getAIResponse(message) || ''
